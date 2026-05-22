@@ -39,29 +39,33 @@ test_data <- load_pacmos_data("test")
 ## Available datasets
 
 ### MESOMICS
+<ol>
+    <li>archetypes                 : Archetype proportions.</li> 
+    <li>D_alt_MOFA                 : Genomic Alterations.</li>
+    <li>D_cnv_MOFA                 : Copy Number Alterations.</li>
+    <li>D_exprB_MOFA               : Gene expression data.</li>
+    <li>D_loh_MOFA                 : Loss Of Heterogeneity.</li>
+    <li>D_met.bodB_MOFA            : Methylation gene body regions.</li>
+    <li>D_met.enhB_MOFA            : Methylation enhancer regions.</li>
+    <li>D_met.proB_MOFA            : Methylation promoter regions.</li>
+    <li>MESOMICS_latent_factors    : MOFA latent factors.</li>
+</ol>
 
-* archetypes                 : Archetype proportions.
-* D_alt_MOFA                 : Genomic Alterations.
-* D_cnv_MOFA                 : Copy Number Alterations.
-* D_exprB_MOFA               : Gene expression data.
-* D_loh_MOFA                 : Loss Of Heterogeneity.
-* D_met.bodB_MOFA            : Methylation gene body regions.
-* D_met.enhB_MOFA            : Methylation enhancer regions.
-* D_met.proB_MOFA            : Methylation promoter regions.
-* MESOMICS_latent_factors    : MOFA latent factors.
 
 ### lungNENomics
-
-* Inputs_MOFA                 : MOFA input matrices.
-* lungNEN_LF_K4_with_label    : Archetype proportions with discrete molecular group classifications. 
-* lungNEN_LF_K4_without_label : Archetype proportions without discrete molecular group classifications. 
-* lungNEN_LFs                 : MOFA latent factors.
-* lungNEN_sample_label        : Sample IDs with molecular groups.
+<ol>
+    <li>Inputs_MOFA                 : MOFA input matrices.</li>
+    <li>lungNEN_LF_K4_with_label    : Archetype proportions with discrete molecular group classifications. </li>
+    <li>lungNEN_LF_K4_without_label : Archetype proportions without discrete molecular group classifications. </li>
+    <li>lungNEN_LFs                 : MOFA latent factors.</li>
+    <li>lungNEN_sample_label        : Sample IDs with molecular groups.</li>
+</ol>
 
 ### Test datasets
-
-* lungNEN_test_expr           : Test expression data for lungNENomics cohort.
-* MESOMICS_test_expr          : Test expression data for MESOMICS cohort.
+<ol>
+    <li>lungNEN_test_expr           : Test expression data for lungNENomics cohort.</li>
+    <li>MESOMICS_test_expr          : Test expression data for MESOMICS cohort.</li>
+</ol>
 
 ## Related package
 
