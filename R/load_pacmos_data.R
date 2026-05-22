@@ -3,6 +3,15 @@
 #' @param dataset One of `"MESOMICS"`, `"lungNENomics"`, or `"test"`.
 #'
 #' @return A named list of PACMOSData resources.
+#'
+#' @examples
+#' library(PACMOSData)
+#'
+#' mesomics <- load_pacmos_data("MESOMICS")
+#' lungnen <- load_pacmos_data("lungNENomics")
+#' test <- load_pacmos_data("test")
+#'
+#'
 #' @export
 load_pacmos_data <- function(dataset = c("MESOMICS", "lungNENomics", "test")) {
   dataset <- match.arg(dataset)
@@ -37,7 +46,7 @@ load_pacmos_data <- function(dataset = c("MESOMICS", "lungNENomics", "test")) {
   q <- AnnotationHub::query(eh, "PACMOSData")
 
   if (length(q) == 0) {
-    stop(
+    message(
       "PACMOSData resources are not available in ExperimentHub yet. ",
       "This package must be submitted to Bioconductor and the data files ",
       "must be uploaded to ExperimentHub storage before this function works.",

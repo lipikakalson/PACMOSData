@@ -1,0 +1,86 @@
+---
+title: "PACMOSData"
+output:
+  rmarkdown::html_document:
+    toc: true
+    toc_depth: 2
+vignette: >
+  %\VignetteIndexEntry{PACMOSData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Overview
+
+`PACMOSData` is an ExperimentHub data package providing reference datasets for PACMOS analyses of MESOMICS and lungNENomics cohorts.
+
+The package contains metadata and access utilities for:
+
+* MESOMICS reference datasets
+* lungNENomics reference datasets
+* PACMOS example and test datasets
+
+These datasets are intended to support reproducible multi-omics analyses using the `PACMOS` framework.
+
+## Installation
+
+```{r, eval=FALSE}
+BiocManager::install("PACMOSData")
+```
+
+## Load package
+
+```{r, eval = FALSE}
+library(PACMOSData)
+```
+
+## Available datasets
+
+### MESOMICS datasets
+
+The following datasets are available for MESOMICS analyses:
+
+* `archetypes` : Archetype proportions.
+* `D_alt_MOFA` : Genomic Alterations.
+* `D_cnv_MOFA` : Copy Number Alterations.
+* `D_exprB_MOFA` : Gene expression data.
+* `D_loh_MOFA` : Loss of heterozygosity.
+* `D_met.bodB_MOFA` : Methylation gene body regions.
+* `D_met.enhB_MOFA` : Methylation enhancer regions.
+* `D_met.proB_MOFA` : Methylation promoter regions.
+* `MESOMICS_latent_factors` : MOFA latent factors.
+
+### lungNENomics datasets
+
+The following datasets are available for lungNENomics analyses:
+
+* `Inputs_MOFA` : MOFA input matrices.
+* `lungNEN_LF_K4_with_label` : Archetype proportions with discrete molecular group classifications.
+* `lungNEN_LF_K4_without_label` : Archetype proportions without discrete molecular group classifications.
+* `lungNEN_LFs` : MOFA latent factors.
+* `lungNEN_sample_label` : Sample IDs with molecular groups.
+
+### Test datasets
+
+The package also contains small example datasets used for testing and demonstrating PACMOS workflows:
+
+* `lungNEN_test_expr` : Test expression data for lungNENomics cohort.
+* `MESOMICS_test_expr` : Test expression data for MESOMICS cohort.
+
+## Data access
+
+Data resources can be loaded using:
+
+```r
+library(PACMOSData)
+
+mesomics_data <- load_pacmos_data("MESOMICS")
+
+lungnen_data <- load_pacmos_data("lungNENomics")
+
+test_data <- load_pacmos_data("test")
+```
+
+### Related package
+
+The datasets provided in `PACMOSData` are intended for use with the [PACMOS](https://github.com/IARCbioinfo/PACMOS) 

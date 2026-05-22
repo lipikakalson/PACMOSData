@@ -15,3 +15,12 @@ A named list of PACMOSData resources.
 \description{
 Load PACMOSData resources by dataset
 }
+\examples{
+library(PACMOSData)
+
+mesomics <- load_pacmos_data("MESOMICS")
+lungnen <- load_pacmos_data("lungNENomics")
+test <- load_pacmos_data("test")
+
+
+}

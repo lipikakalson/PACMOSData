@@ -23,7 +23,6 @@ Suggests:
     ExperimentHubData,
     knitr,
     rmarkdown,
-    BiocStyle
 VignetteBuilder: knitr
 biocViews:
     ExperimentData,
