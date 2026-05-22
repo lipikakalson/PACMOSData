@@ -1,0 +1,35 @@
+Package: PACMOSData
+Title: ExperimentHub Data for PACMOS
+Version: 0.99.0
+Authors@R: 
+    person(
+        "Lipika",
+        "Kalson",
+        email = "lipikasingh487@gmail.com",
+        role = c("aut", "cre")
+    )
+Description: Large reference datasets used by the PACMOS package
+    for multi-omics and MOFA analysis of lung neuroendocrine
+    neoplasms and MESOMICS data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: false
+Depends:
+    R (>= 4.3.0)
+Imports:
+    ExperimentHub,
+    AnnotationHub
+Suggests:
+    ExperimentHubData,
+    knitr,
+    rmarkdown,
+    BiocStyle
+VignetteBuilder: knitr
+biocViews:
+    ExperimentData,
+    Homo_sapiens_Data,
+    CancerData,
+    SequencingData,
+    ExperimentHub
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

@@ -1,0 +1,11 @@
+raw/
+eh-data/
+*.RData
+*.rda
+*.rds
+*test-local-load.R
+.Rproj.user/
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
