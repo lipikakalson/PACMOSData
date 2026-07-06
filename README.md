@@ -9,6 +9,7 @@ PACMOSData contains metadata and access utilities for:
 MESOMICS: Multi-omics study of pleural mesothelioma.
 lungNENomics: Multi-omics study of lung neuroendocrine neoplasms.
 
+
 MOFA, or Multi-Omics Factor Analysis, is an unsupervised factor analysis framework for integrating multiple omics layers. MOFA identifies latent factors that capture major sources of variation across molecular data types. In PACMOS workflows, these latent factor spaces are used as reference spaces for comparing independent query samples.
 
 ---
@@ -42,7 +43,7 @@ query_data <- load_pacmos_data("query")
 ## Available datasets
 
 ### MESOMICS
-<ol></ol>
+<ol>
     <li>MESOMICS_archetypes     : Archetype proportions.</li> 
     <li>MESOMICS_MOFA_inputs    : MOFA input matrices.</li>
     <li>MESOMICS_latent_factors : MOFA latent factors.</li>
