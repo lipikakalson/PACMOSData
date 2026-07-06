@@ -1,6 +1,6 @@
 #' Load PACMOSData resources by dataset
 #'
-#' @param dataset One of `"MESOMICS"`, `"lungNENomics"`, or `"test"`.
+#' @param dataset One of `"MESOMICS"`, `"lungNENomics"`, or `"query"`.
 #'
 #' @return A named list of PACMOSData resources.
 #'
@@ -9,36 +9,31 @@
 #'
 #' mesomics <- load_pacmos_data("MESOMICS")
 #' lungnen <- load_pacmos_data("lungNENomics")
-#' test <- load_pacmos_data("test")
+#' query <- load_pacmos_data("query")
 #'
 #'
 #' @export
-load_pacmos_data <- function(dataset = c("MESOMICS", "lungNENomics", "test")) {
+#' @importFrom ExperimentHub ExperimentHub
+#' @importFrom AnnotationHub query
+load_pacmos_data <- function(dataset = c("MESOMICS", "lungNENomics", "query")) {
   dataset <- match.arg(dataset)
 
   selected_titles <- switch(
     dataset,
     MESOMICS = c(
-      "archetypes",
-      "D_alt_MOFA",
-      "D_cnv_MOFA",
-      "D_exprB_MOFA",
-      "D_loh_MOFA",
-      "D_met.bodB_MOFA",
-      "D_met.enhB_MOFA",
-      "D_met.proB_MOFA",
+      "MESOMICS_archetypes",
+      "MESOMICS_MOFA_inputs",
       "MESOMICS_latent_factors"
     ),
     lungNENomics = c(
       "Inputs_MOFA",
-      "lungNEN_LF_K4_with_label",
-      "lungNEN_LF_K4_without_label",
-      "lungNEN_LFs",
+      "lungNENomics_archetypes_with_label",
+      "lungNEN_latent_factors",
       "lungNEN_sample_label"
     ),
     test = c(
-      "lungNEN_test_expr",
-      "MESOMICS_test_expr"
+      "lungNEN_query_expr",
+      "MESOMICS_query_expr"
     )
   )
 
@@ -46,12 +41,14 @@ load_pacmos_data <- function(dataset = c("MESOMICS", "lungNENomics", "test")) {
   q <- AnnotationHub::query(eh, "PACMOSData")
 
   if (length(q) == 0) {
-    message(
+    warning(
       "PACMOSData resources are not available in ExperimentHub yet. ",
       "This package must be submitted to Bioconductor and the data files ",
       "must be uploaded to ExperimentHub storage before this function works.",
       call. = FALSE
     )
+    return(list())
+
   }
 
   keep <- q$title %in% selected_titles
