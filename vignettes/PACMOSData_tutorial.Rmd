@@ -1,0 +1,84 @@
+---
+title: "PACMOSData"
+author: 
+  - name: "Lipika Kalson"
+package: PACMOSData
+output:
+  BiocStyle::html_document:
+    toc: true
+    toc_depth: 2
+vignette: >
+  %\VignetteIndexEntry{PACMOSData}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Overview
+
+`PACMOSData` is an `ExperimentHub` data package that provides reference datasets for use with the `PACMOS` framework. These resources support projection-based analyses of independent query samples using reference multi-omics latent factor spaces derived from the MESOMICS and lungNENomics studies.
+
+`PACMOS` is a computational framework designed to project query samples into pretrained multi-omics latent spaces and compare them with reference cohorts. It enables the interpretation of new samples in relation to previously defined molecular factors, archetypes, or molecular groups.
+
+`PACMOSData` contains metadata and access utilities for:
+
+* MESOMICS: Multi-omics study of pleural mesothelioma.
+* lungNENomics: Multi-omics study of lung neuroendocrine neoplasms. 
+
+`MOFA`, or Multi-Omics Factor Analysis, is an unsupervised factor analysis framework for integrating multiple omics layers. MOFA identifies latent factors that capture major sources of variation across molecular data types. In PACMOS workflows, these latent factor spaces are used as reference spaces for comparing independent query samples.
+
+
+# Installation
+
+```{r install, eval=FALSE}
+BiocManager::install("PACMOSData")
+```
+
+# Load package
+
+```{r load-package}
+library(PACMOSData)
+```
+
+
+**MESOMICS datasets**
+
+The following datasets are available for MESOMICS analyses:
+
+* `MESOMICS_archetypes` : Archetype proportions.
+* `MESOMICS_MOFA_inputs` : MOFA input matrices.
+* `MESOMICS_latent_factors` : MOFA latent factors.
+
+**lungNENomics datasets**
+
+The following datasets are available for lungNENomics analyses:
+
+* `lungNENomics_MOFA_inputs` : MOFA input matrices.
+* `lungNENomics_archetypes_with_label` : Archetype proportions with discrete molecular group classifications.
+* `lungNEN_latent_factors` : MOFA latent factors.
+* `lungNEN_sample_label` : Sample IDs with molecular groups.
+
+**Query datasets**
+
+The package also contains small example datasets used for testing and demonstrating PACMOS workflows:
+
+* `lungNEN_query_expr` : Query expression data for lungNENomics cohort.
+* `MESOMICS_query_expr` : Query expression data for MESOMICS cohort.
+
+## Data access
+
+Data resources can be loaded using:
+
+```r
+mesomics_data <- load_pacmos_data("MESOMICS")
+
+lungnen_data <- load_pacmos_data("lungNENomics")
+
+query_data <- load_pacmos_data("query")
+```
+
+# Related package
+
+The datasets provided in `PACMOSData` are intended for use with the [PACMOS](https://github.com/IARCbioinfo/PACMOS) package.
+```{r session-info}
+sessionInfo()
+```

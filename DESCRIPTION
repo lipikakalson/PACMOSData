@@ -8,9 +8,11 @@ Authors@R:
         email = "lipikasingh487@gmail.com",
         role = c("aut", "cre")
     )
-Description: Large reference datasets used by the PACMOS package
-    for multi-omics and MOFA analysis of lung neuroendocrine
-    neoplasms and MESOMICS data.
+Description: Provides large reference datasets used by the PACMOS package
+    for multi-omics analysis of lung neuroendocrine neoplasms and
+    pleural mesothelioma data. The package includes
+    resources for MOFA (Multi-Omics Factor Analysis) models and related
+    PACMOS examples. Data resources are accessed through ExperimentHub.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: false
@@ -20,9 +22,10 @@ Imports:
     ExperimentHub,
     AnnotationHub
 Suggests:
+    BiocStyle,
     ExperimentHubData,
     knitr,
-    rmarkdown,
+    rmarkdown
 VignetteBuilder: knitr
 biocViews:
     ExperimentData,

@@ -1,0 +1,13 @@
+CHANGES IN VERSION 0.99.0
+-------------------------
+
+NEW FEATURES
+
+    o Initial Bioconductor submission of PACMOSData.
+
+    o Added ExperimentHub metadata for PACMOS reference datasets.
+
+    o Added accessor function load_pacmos_data() for retrieving PACMOSData
+      resources from ExperimentHub.
+
+    o Added vignette demonstrating access to PACMOSData resources.
