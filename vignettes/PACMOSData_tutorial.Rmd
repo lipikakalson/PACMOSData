@@ -79,6 +79,8 @@ query_data <- load_pacmos_data("query")
 # Related package
 
 The datasets provided in `PACMOSData` are intended for use with the [PACMOS](https://github.com/IARCbioinfo/PACMOS) package.
+
+# Session Info
 ```{r session-info}
 sessionInfo()
 ```
